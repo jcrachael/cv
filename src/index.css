@@ -1,0 +1,35 @@
+/* GLOBALS */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  background: var(--main-bg-gradient);
+  text-align: center;
+  color: var(--yellow);
+  min-height: 100vh;
+}
+
+
+
+/* FOOTER */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding-top: 2rem;
+  padding-bottom: 0.3rem;
+  font-size: 10pt;
+  width: 100%;
+}
+
