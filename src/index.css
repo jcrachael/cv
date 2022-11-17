@@ -1,9 +1,12 @@
 /* GLOBALS */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400;1,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #101828;
 }
 
 *,
@@ -13,23 +16,16 @@
 }
 
 body {
-  background-color: var(--main-bg);
-  background: var(--main-bg-gradient);
   text-align: center;
-  color: var(--yellow);
-  min-height: 100vh;
 }
-
-
 
 /* FOOTER */
 
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding-top: 2rem;
   padding-bottom: 0.3rem;
   font-size: 10pt;
   width: 100%;
 }
-

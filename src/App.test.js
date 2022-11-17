@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders div', () => {
+test('renders title', () => {
   render(<App />);
-  const div = screen.getByText(/Hello, world/i);
+  const div = screen.getByText(/CV Generator/i);
   expect(div).toBeInTheDocument();
 });

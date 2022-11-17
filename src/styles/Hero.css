@@ -1,0 +1,18 @@
+section {
+  padding: 2rem 0rem;
+}
+
+.callout {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #475467;
+  line-height: 1.5rem;
+}
+
+.italics {
+  font-style: italic;
+}
