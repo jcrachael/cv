@@ -4,12 +4,23 @@ import { Component } from "react";
 class EducationInput extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(event) {
+    console.log("Delete btn clicked");
+    console.log(event.target);
+
+    console.log(this.props);
   }
 
   render() {
     return (
       <div id={this.props.propID} className={this.props.class}>
+        <div className="delete-icon" onClick={this.handleDelete}>
+          &times;
+        </div>
         <div className="form-row">
           <div className="form-control">
             <label htmlFor="school">Name of school/institute*</label>

@@ -1,25 +1,28 @@
 import React, { Component } from "react";
-import { AboutFieldset } from "./AboutFieldset";
-import { EducationFieldset } from "./EducationFieldset";
-import { WorkFieldset } from "./WorkFieldset";
+import Button from "./Button";
+import Fieldset from "./Fieldset";
+import Hero from "./Hero";
 
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      about: {},
-      education: {},
-      work: {},
-    };
   }
+
   render() {
     return (
-      <form>
-        <AboutFieldset />
-        <EducationFieldset />
-        <WorkFieldset />
-        <input type="submit" value="Generate CV"></input>
-      </form>
+      <div className="Form">
+        <Hero view="0" />
+        <form>
+          <Fieldset type="about" />
+          <Fieldset type="edu" />
+          <Fieldset type="work" />
+          <Button
+            type="submit"
+            value="Generate CV"
+            clickEvent={this.props.toggleView}
+          />
+        </form>
+      </div>
     );
   }
 }

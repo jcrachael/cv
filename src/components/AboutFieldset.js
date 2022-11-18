@@ -14,8 +14,7 @@ class AboutFieldset extends Component {
 
   render() {
     return (
-      <fieldset className="about">
-        <legend>About you</legend>
+      <div className="about-container">
         <div className="form-row">
           <div className="form-control">
             <label htmlFor="firstName">First name*</label>
@@ -51,7 +50,7 @@ class AboutFieldset extends Component {
             />
           </div>
         </div>
-      </fieldset>
+      </div>
     );
   }
 }

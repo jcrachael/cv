@@ -10,6 +10,7 @@ class WorkInput extends Component {
   render() {
     return (
       <div id={this.props.propID} className={this.props.class}>
+        <div className="delete-icon">&times;</div>
         <div className="form-row">
           <div className="form-control">
             <label htmlFor="employer">Employer name*</label>
@@ -36,6 +37,7 @@ class WorkInput extends Component {
             <input
               id="role"
               type="text"
+              className="role"
               placeholder="Working cash register, assisting customers with enquiries, processing refunds, stocking shelves"
             />
           </div>
