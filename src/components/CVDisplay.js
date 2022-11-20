@@ -3,7 +3,7 @@ import { Component } from "react";
 import Button from "./Button";
 import Hero from "./Hero";
 
-export default class CVDisplay extends Component {
+export class CVDisplay extends Component {
   constructor(props) {
     super(props);
     this.cv = {
@@ -33,25 +33,25 @@ export default class CVDisplay extends Component {
   render() {
     return (
       <div className="CVDisplay">
-        <Hero view="1" />
+        <Hero />
         <div className="cv-container">
           <div className="cv-about">
             <p className="cv-title">
-              <span className="firstName">{this.cv.firstname}</span>
-              <span className="lastName">{this.cv.surname}</span>
+              <span className="firstName">{this.props.user.firstname}</span>
+              <span className="lastName">{this.props.user.surname}</span>
             </p>
             <div className="cv-info">
               <div className="row">
                 <span className="label">Email: </span>
-                <span className="email data">{this.cv.email}</span>
+                <span className="email data">{this.props.user.email}</span>
               </div>
               <div className="row">
                 <span className="label">Phone: </span>
-                <span className="phone data">{this.cv.tel}</span>
+                <span className="phone data">{this.props.user.tel}</span>
               </div>
               <div className="row">
                 <span className="label">Address: </span>
-                <span className="address data">{this.cv.address}</span>
+                <span className="address data">{this.props.user.address}</span>
               </div>
             </div>
           </div>
@@ -60,15 +60,21 @@ export default class CVDisplay extends Component {
             <div className="cv-info 0">
               <div className="row">
                 <span className="label">Institution: </span>
-                <span className="school data">{this.cv.edu[0]["school"]}</span>
+                <span className="school data">
+                  {this.props.user.education[0]["school"]}
+                </span>
               </div>
               <div className="row">
                 <span className="label">Qualification: </span>
-                <span className="qual data">{this.cv.edu[0]["qual"]}</span>
+                <span className="qual data">
+                  {this.props.user.education[0]["qual"]}
+                </span>
               </div>
               <div className="row">
                 <span className="label">Date: </span>
-                <span className="edudate data">{this.cv.edu[0]["date"]}</span>
+                <span className="edudate data">
+                  {this.props.user.education[0]["date"]}
+                </span>
               </div>
             </div>
           </div>
@@ -79,13 +85,13 @@ export default class CVDisplay extends Component {
                 <div className="inner-row">
                   <span className="label">Employer: </span>
                   <span className="employer data">
-                    {this.cv.work[0]["employer"]}
+                    {this.props.user.work[0]["employer"]}
                   </span>
                 </div>
                 <div className="inner-row">
                   <span className="label">Started: </span>
                   <span className="datestarted data">
-                    {this.cv.work[0]["started"]}
+                    {this.props.user.work[0]["started"]}
                   </span>
                 </div>
               </div>
@@ -93,19 +99,23 @@ export default class CVDisplay extends Component {
               <div className="row">
                 <div className="inner-row">
                   <span className="label">Position: </span>
-                  <span className="pos data">{this.cv.work[0]["pos"]}</span>
+                  <span className="pos data">
+                    {this.props.user.work[0]["pos"]}
+                  </span>
                 </div>
                 <div className="inner-row">
                   <span className="label">Ended: </span>
                   <span className="dateended data">
-                    {this.cv.work[0]["ended"]}
+                    {this.props.user.work[0]["ended"]}
                   </span>
                 </div>
               </div>
 
               <div className="row">
                 <span className="dutieslabel label">Duties: </span>
-                <span className="role data">{this.cv.work[0]["role"]}</span>
+                <span className="role data">
+                  {this.props.user.work[0]["role"]}
+                </span>
               </div>
             </div>
           </div>
@@ -113,11 +123,7 @@ export default class CVDisplay extends Component {
             This CV was generated at jcrachael.github.io/cv
           </div>
         </div>
-        <Button
-          type="button"
-          value="Go back"
-          clickEvent={this.props.toggleView}
-        />
+        <Button type="button" value="Go back" />
       </div>
     );
   }

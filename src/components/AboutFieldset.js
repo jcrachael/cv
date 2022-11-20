@@ -1,15 +1,8 @@
 import { Component } from "react";
 
 class AboutFieldset extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      tel: "",
-      address: "",
-    };
+  constructor() {
+    super();
   }
 
   render() {

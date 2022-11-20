@@ -4,23 +4,19 @@ import Fieldset from "./Fieldset";
 import Hero from "./Hero";
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   render() {
     return (
       <div className="Form">
-        <Hero view="0" />
+        <Hero />
         <form>
           <Fieldset type="about" />
           <Fieldset type="edu" />
           <Fieldset type="work" />
-          <Button
-            type="submit"
-            value="Generate CV"
-            clickEvent={this.props.toggleView}
-          />
+          <Button type="submit" value="Generate CV" />
         </form>
       </div>
     );

@@ -2,22 +2,13 @@
 import { Component } from "react";
 
 class EducationInput extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleDelete(event) {
-    console.log("Delete btn clicked");
-    console.log(event.target);
-
-    console.log(this.props);
+  constructor() {
+    super();
   }
 
   render() {
     return (
-      <div id={this.props.propID} className={this.props.class}>
+      <div className="educationinput">
         <div className="delete-icon" onClick={this.handleDelete}>
           &times;
         </div>

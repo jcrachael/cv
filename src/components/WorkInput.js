@@ -2,14 +2,13 @@
 import { Component } from "react";
 
 class WorkInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  constructor() {
+    super();
   }
 
   render() {
     return (
-      <div id={this.props.propID} className={this.props.class}>
+      <div className="workinput">
         <div className="delete-icon">&times;</div>
         <div className="form-row">
           <div className="form-control">
