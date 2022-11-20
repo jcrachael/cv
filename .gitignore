@@ -31,3 +31,4 @@ yarn-error.log*
 /prettierrc.json
 /.eslintrc.js
 /src/setupTests.js
+/mockups

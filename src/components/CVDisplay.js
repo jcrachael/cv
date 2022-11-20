@@ -6,30 +6,8 @@ import Hero from "./Hero";
 export class CVDisplay extends Component {
   constructor(props) {
     super(props);
-    this.cv = {
-      firstname: "John",
-      surname: "Smith",
-      email: "john@example.com",
-      tel: "+61 432 123 456",
-      address: "123 Smith Street SMITHTOWN VIC 3000",
-      edu: [
-        {
-          school: "Sample University",
-          qual: "Bachelor of Arts",
-          date: "21 June 2020",
-        },
-      ],
-      work: [
-        {
-          employer: "Walmart",
-          pos: "Duty Manager",
-          started: "12 April 2012",
-          ended: "27 December 2019",
-          role: "Working cash register, assisting customers with enquiries, processing refunds, stocking shelves",
-        },
-      ],
-    };
   }
+
   render() {
     return (
       <div className="CVDisplay">
