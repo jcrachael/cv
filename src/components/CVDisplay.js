@@ -1,8 +1,11 @@
 import "../styles/CVDisplay.css";
 import { Component } from "react";
 import Button from "./Button";
-import Hero from "./Hero";
 
+// This is the CVDisplay component
+// Props:
+// this.props.user is the user object from Main's state
+// this.props.handleSubmit is the onClick event listener from Main which toggles the display
 export class CVDisplay extends Component {
   constructor(props) {
     super(props);
@@ -11,12 +14,11 @@ export class CVDisplay extends Component {
   render() {
     return (
       <div className="CVDisplay">
-        <Hero />
         <div className="cv-container">
           <div className="cv-about">
             <p className="cv-title">
-              <span className="firstName">{this.props.user.firstname}</span>
-              <span className="lastName">{this.props.user.surname}</span>
+              <span className="firstName">{this.props.user.firstName}</span>
+              <span className="lastName">{this.props.user.lastName}</span>
             </p>
             <div className="cv-info">
               <div className="row">
@@ -25,7 +27,7 @@ export class CVDisplay extends Component {
               </div>
               <div className="row">
                 <span className="label">Phone: </span>
-                <span className="phone data">{this.props.user.tel}</span>
+                <span className="phone data">{this.props.user.phone}</span>
               </div>
               <div className="row">
                 <span className="label">Address: </span>
@@ -101,7 +103,7 @@ export class CVDisplay extends Component {
             This CV was generated at jcrachael.github.io/cv
           </div>
         </div>
-        <Button type="button" value="Go back" />
+        <Button type="button" value="Edit" onClick={this.props.handleSubmit} />
       </div>
     );
   }
