@@ -3,6 +3,7 @@ import "../styles/Main.css";
 import { Form } from "./Form";
 import { CVDisplay } from "./CVDisplay";
 import Hero from "./Hero";
+import uniqid from "uniqid";
 
 // This is the Main component
 
@@ -21,6 +22,10 @@ class Main extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleEduChange = this.handleEduChange.bind(this);
     this.handleWorkChange = this.handleWorkChange.bind(this);
+    this.handleAddEducation = this.handleAddEducation.bind(this);
+    this.handleAddWork = this.handleAddWork.bind(this);
+    this.handleDeleteEdu = this.handleDeleteEdu.bind(this);
+    this.handleDeleteWork = this.handleDeleteWork.bind(this);
     this.state = {
       form: true,
       user: {
@@ -29,8 +34,10 @@ class Main extends Component {
         email: "",
         phone: "",
         address: "",
-        education: [{ id: 0, school: "", qual: "", date: "" }],
-        work: [{ id: 0, name: "", pos: "", start: "", end: "", role: "" }],
+        education: [{ id: uniqid(), school: "", qual: "", date: "" }],
+        work: [
+          { id: uniqid(), name: "", pos: "", start: "", end: "", role: "" },
+        ],
       },
     };
   }
@@ -55,7 +62,7 @@ class Main extends Component {
   // Input change event listener for nested Education section
   handleEduChange(e) {
     let newEducation = this.state.user.education.map((item, index) => {
-      if (index === e.target.parentElement.parentElement.parentElement.id) {
+      if (index === e.target.parentElement.parentElement.parentElement.id - 1) {
         return { ...item, [e.target.name]: e.target.value };
       } else {
         return item;
@@ -69,10 +76,64 @@ class Main extends Component {
     });
   }
 
+  // Handle add education button click
+  handleAddEducation() {
+    this.setState({
+      user: {
+        ...this.state.user,
+        education: [
+          ...this.state.user.education,
+          { id: uniqid(), school: "", qual: "", date: "" },
+        ],
+      },
+    });
+  }
+
+  // Handle add work button click
+  handleAddWork() {
+    this.setState({
+      user: {
+        ...this.state.user,
+        work: [
+          ...this.state.user.work,
+          { id: uniqid(), name: "", pos: "", start: "", end: "", role: "" },
+        ],
+      },
+    });
+  }
+
+  // Handle delete education button click
+  handleDeleteEdu(e) {
+    console.log(e.target.parentElement.id);
+    let newEducation = this.state.user.education.filter(
+      (item) => item.id !== e.target.parentElement.id
+    );
+    this.setState({
+      user: {
+        ...this.state.user,
+        education: newEducation,
+      },
+    });
+  }
+
+  // Handle delete work button click
+  handleDeleteWork(e) {
+    console.log(e.target.parentElement.id);
+    let newWork = this.state.user.work.filter(
+      (item) => item.id !== e.target.parentElement.id
+    );
+    this.setState({
+      user: {
+        ...this.state.user,
+        work: newWork,
+      },
+    });
+  }
+
   // Input change event listener for nested Work section
   handleWorkChange(e) {
     let newWork = this.state.user.work.map((item, index) => {
-      if (index === e.target.parentElement.parentElement.parentElement.id) {
+      if (index === e.target.parentElement.parentElement.parentElement.id - 1) {
         return { ...item, [e.target.name]: e.target.value };
       } else {
         return item;
@@ -97,6 +158,10 @@ class Main extends Component {
             handleChange={this.handleChange}
             handleEduChange={this.handleEduChange}
             handleWorkChange={this.handleWorkChange}
+            handleAddEducation={this.handleAddEducation}
+            handleAddWork={this.handleAddWork}
+            handleDeleteEdu={this.handleDeleteEdu}
+            handleDeleteWork={this.handleDeleteWork}
             user={this.state.user}
           />
         ) : (

@@ -13,25 +13,26 @@ class EducationFieldset extends Component {
   }
 
   render() {
-    let numEls = this.props.user.education.length;
-    let listOfEls = [];
-    for (let i = 1; i <= numEls; i++) {
-      listOfEls.push(
-        <EducationInput
-          key={i}
-          uniqID={i}
-          handleChange={this.props.handleChange}
-          user={this.props.user}
-        />
-      );
-    }
+    const list = this.props.user.education.map((item, index) => (
+      <EducationInput
+        key={index}
+        uniqID={item.id}
+        handleChange={this.props.handleChange}
+        handleDeleteEdu={this.props.handleDeleteEdu}
+        user={this.props.user}
+      />
+    ));
 
     return (
       <div className="education-container">
-        {listOfEls}
+        {list}
         <div className="add-more-edu-btn form-row">
           <div className="form-control">
-            <Button type="button" value="Add" />
+            <Button
+              type="button"
+              value="Add"
+              onClick={this.props.handleAddEducation}
+            />
           </div>
         </div>
       </div>

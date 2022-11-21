@@ -13,12 +13,15 @@ class WorkInput extends Component {
   render() {
     return (
       <div className="workinput" id={this.props.uniqID}>
-        <div className="delete-icon">&times;</div>
+        <div className="delete-icon" onClick={this.props.handleDeleteWork}>
+          &times;
+        </div>
         <div className="form-row">
           <div className="form-control">
-            <label htmlFor="employer">Employer name*</label>
+            <label htmlFor="name">Employer name*</label>
             <input
-              id="employer"
+              id="name"
+              name="name"
               type="text"
               placeholder="Employer"
               onChange={this.props.handleChange}
@@ -26,9 +29,10 @@ class WorkInput extends Component {
             />
           </div>
           <div className="form-control">
-            <label htmlFor="position">Position title*</label>
+            <label htmlFor="pos">Position title*</label>
             <input
-              id="position"
+              id="pos"
+              name="pos"
               type="text"
               placeholder="Position"
               onChange={this.props.handleChange}
@@ -38,12 +42,24 @@ class WorkInput extends Component {
         </div>
         <div className="form-row">
           <div className="form-control">
-            <label htmlFor="date">Date started*</label>
-            <input id="dateStarted" type="date" required />
+            <label htmlFor="start">Date started*</label>
+            <input
+              id="start"
+              name="start"
+              type="date"
+              onChange={this.props.handleChange}
+              required
+            />
           </div>
           <div className="form-control">
-            <label htmlFor="date">Date ended*</label>
-            <input id="dateEnded" type="date" required />
+            <label htmlFor="end">Date ended*</label>
+            <input
+              id="end"
+              name="end"
+              type="date"
+              onChange={this.props.handleChange}
+              required
+            />
           </div>
         </div>
         <div className="form-row">
@@ -52,6 +68,7 @@ class WorkInput extends Component {
             <input
               id="role"
               type="text"
+              name="role"
               className="role"
               placeholder="Working cash register, assisting customers with enquiries, processing refunds, stocking shelves"
               onChange={this.props.handleChange}

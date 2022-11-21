@@ -28,6 +28,10 @@ class Form extends Component {
           handleChange={this.props.handleChange}
           handleEduChange={this.props.handleEduChange}
           handleWorkChange={this.props.handleWorkChange}
+          handleAddEducation={this.props.handleAddEducation}
+          handleAddWork={this.props.handleAddWork}
+          handleDeleteEdu={this.props.handleDeleteEdu}
+          handleDeleteWork={this.props.handleDeleteWork}
           user={this.props.user}
         />
       );

@@ -40,6 +40,8 @@ export default class Fieldset extends Component {
       return (
         <EducationFieldset
           handleChange={this.props.handleEduChange}
+          handleAddEducation={this.props.handleAddEducation}
+          handleDeleteEdu={this.props.handleDeleteEdu}
           user={this.props.user}
         />
       );
@@ -48,6 +50,8 @@ export default class Fieldset extends Component {
         <WorkFieldset
           user={this.props.user}
           handleChange={this.props.handleWorkChange}
+          handleAddWork={this.props.handleAddWork}
+          handleDeleteWork={this.props.handleDeleteWork}
         />
       );
     } else {

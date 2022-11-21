@@ -12,6 +12,7 @@ export class CVDisplay extends Component {
   }
 
   render() {
+    console.log(this.props.user);
     return (
       <div className="CVDisplay">
         <div className="cv-container">
@@ -65,13 +66,13 @@ export class CVDisplay extends Component {
                 <div className="inner-row">
                   <span className="label">Employer: </span>
                   <span className="employer data">
-                    {this.props.user.work[0]["employer"]}
+                    {this.props.user.work[0]["name"]}
                   </span>
                 </div>
                 <div className="inner-row">
                   <span className="label">Started: </span>
                   <span className="datestarted data">
-                    {this.props.user.work[0]["started"]}
+                    {this.props.user.work[0]["start"]}
                   </span>
                 </div>
               </div>
@@ -86,7 +87,7 @@ export class CVDisplay extends Component {
                 <div className="inner-row">
                   <span className="label">Ended: </span>
                   <span className="dateended data">
-                    {this.props.user.work[0]["ended"]}
+                    {this.props.user.work[0]["end"]}
                   </span>
                 </div>
               </div>

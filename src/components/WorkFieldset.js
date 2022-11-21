@@ -12,25 +12,26 @@ class WorkFieldset extends Component {
   }
 
   render() {
-    let numEls = this.props.user.work.length;
-    let listOfEls = [];
-    for (let i = 1; i <= numEls; i++) {
-      listOfEls.push(
-        <WorkInput
-          key={i}
-          uniqID={i}
-          handleChange={this.props.handleChange}
-          user={this.props.user}
-        />
-      );
-    }
+    const list = this.props.user.work.map((item, index) => (
+      <WorkInput
+        key={index}
+        uniqID={item.id}
+        handleChange={this.props.handleChange}
+        handleDeleteWork={this.props.handleDeleteWork}
+        user={this.props.user}
+      />
+    ));
 
     return (
       <div className="work-container">
-        {listOfEls}
+        {list}
         <div className="add-more-work-btn form-row">
           <div className="form-control">
-            <Button type="button" value="Add" />
+            <Button
+              type="button"
+              value="Add"
+              onClick={this.props.handleAddWork}
+            />
           </div>
         </div>
       </div>

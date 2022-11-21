@@ -16,7 +16,7 @@ class EducationInput extends Component {
   render() {
     return (
       <div className="educationinput" id={this.props.uniqID}>
-        <div className="delete-icon" onClick={this.handleDelete}>
+        <div className="delete-icon" onClick={this.props.handleDeleteEdu}>
           &times;
         </div>
         <div className="form-row">
@@ -34,8 +34,9 @@ class EducationInput extends Component {
           <div className="form-control">
             <label htmlFor="qualification">Qualification*</label>
             <input
-              id="qualification"
+              id="qual"
               type="text"
+              name="qual"
               placeholder="Qualification"
               onChange={this.props.handleChange}
               required
@@ -45,7 +46,14 @@ class EducationInput extends Component {
         <div className="form-row">
           <div className="form-control">
             <label htmlFor="date">Date*</label>
-            <input id="date" type="date" className="eduDate" required />
+            <input
+              id="date"
+              name="date"
+              type="date"
+              className="eduDate"
+              onChange={this.props.handleChange}
+              required
+            />
           </div>
         </div>
       </div>
