@@ -1,6 +1,6 @@
 # CV App
 
-Live demo coming soon.
+[Live demo](https://jcrachael.github.io/cv/)
 
 ## About
 
